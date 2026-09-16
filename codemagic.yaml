@@ -3,7 +3,6 @@ workflows:
     name: Android Debug Build
     environment:
       java: 17
-      android_signing: []
     scripts:
       - name: Generate Gradle Wrapper
         script: gradle wrapper --gradle-version 8.7 --distribution-type all
