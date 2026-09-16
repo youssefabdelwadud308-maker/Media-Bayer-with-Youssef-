@@ -3,10 +3,15 @@ workflows:
     name: Build Android APK
     instance_type: mac_mini_m1
     max_build_duration: 30
+    environment:
+      vars:
+        PACKAGE_NAME: "com.example.app"
+      java: 17
     scripts:
-      - name: Build Android APK
+      - name: Set up Android SDK & Build APK
         script: |
-          gradle assembleDebug
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
+          gradle assembleDebug --stacktrace
     artifacts:
       - app/build/outputs/apk/**/*.apk
       - build/outputs/apk/**/*.apk
