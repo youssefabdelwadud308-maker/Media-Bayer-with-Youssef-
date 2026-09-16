@@ -1,5 +1,5 @@
 workflows:
-  android-debug:
+  android-workflow:
     name: Android Debug Build
     environment:
       java: 17
